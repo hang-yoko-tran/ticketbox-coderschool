@@ -4,7 +4,7 @@ load_dotenv()
 
 class Config(object):
     DEBUG=True
-    SQLACHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URI')
     SECRET_KET='freakingtiredkey'
 
 
