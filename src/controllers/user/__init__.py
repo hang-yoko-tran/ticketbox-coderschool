@@ -10,6 +10,7 @@ user_blueprint = Blueprint(
 def load_user(id):
     return User.query.get(id)
 
+
 @user_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -51,6 +52,13 @@ def login():
                 flash(f'Welcome back {current_user.email}!', 'success')
                 return redirect(url_for('root'))
     return render_template('user/login.html')
+
+
+@user_blueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('user_bp.login'))
 
 
 @user_blueprint.route('/forgot-password')
