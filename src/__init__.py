@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user
@@ -25,4 +25,4 @@ def load_user(id):
 
 @app.route('/')
 def root():
-    return "Hello from ticket box"
+    return render_template('index.html')

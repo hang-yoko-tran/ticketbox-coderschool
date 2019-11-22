@@ -3,7 +3,7 @@
 {% block title %} Login {% endblock %}
 
 {% block content %} 
-<form class="form-signin container col-6">
+<form method="POST" action={{url_for('user_bp.login')}} class="form-signin container col-6">
         <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
