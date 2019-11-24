@@ -14,6 +14,8 @@ login_manager = LoginManager(app)
 from src.models.user import User
 migrate = Migrate(app, db)
 
+db.create_all()
+
 
 from src.controllers.user import user_blueprint
 app.register_blueprint(user_blueprint, url_prefix='/user')
